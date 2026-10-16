@@ -9,17 +9,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- CONEXION CON ARCHIVO DE CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
   <!-- ENCABEZADO -->
   <header class="main-header-pantallaPrincipalInstructor">
     <h1>INSTRUCTOR - C O U R S E R A U D E M Y</h1>
     <nav class="nav-hader">
-      <a href="misCursos.html">Mis Cursos</a>
+      <a href="misCursos.html" id="linkMisCursos" style="display:none">Mis Cursos</a>
+      <a href="alta-instructor.html" id="linkInstructor" style="display:none">Convertirme en instructor</a>
+      <a href="#" id="linkSalir" style="display:none">Cerrar sesión</a>
     </nav>
   </header>
+
+  <div id="encabezado-catalogo" class="encabezado-catalogo"></div>
+  <div id="filtros-catalogo" class="filtros"></div>
+  <div id="grid-cursos-inicio"></div>
   <!-- CONEXION A JAVA SCRIPT -->
-<script src="script.js"></script>
+<script src="script.js?v=2"></script>
 </body>
-</html>
+</html>

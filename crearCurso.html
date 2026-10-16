@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- CONEXION CON ARCHIVO DE CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 
 <body>
@@ -21,64 +21,73 @@
             <a href="pantallaPrincipalInstructor.html">Volver al Inicio</a>
         </nav>
     </header>
-    <main class="container-crearCurso">
-        <div class="card-crearCurso">
-            <div class="card-header">
+
+    <main class="editor-curso">
+        <div class="editor-encabezado">
+            <div>
                 <h2>CREA TUS CURSOS</h2>
                 <p class="subtitle">INGRESA LOS DATOS DE TU NUEVO CURSO</p>
             </div>
-            <!-- FORMULARIO -->
-            <form id="crearCursoForm">
-                <div class="form-crear-curso">
+        </div>
+
+        <form id="crearCursoForm" class="editor-rejilla">
+            <!-- COLUMNA IZQUIERDA: DATOS DEL CURSO -->
+            <section class="panel">
+                <h3 class="panel-titulo">Datos del curso</h3>
+
+                <div class="form-group">
                     <label for="titulo">Titulo del curso:</label>
                     <input type="text" id="titulo" name="title" class="form-control" placeholder="Ingresa el titulo del curso..." maxlength="150" required>
                 </div>
-                <!-- CATEGORÍA -->
-                <div class="form-group">
 
-                    <label for="categoria">Categoria:</label>
-                    <select id="categoria" name="category_id" class="form-control" required>
-                        <option value="" disabled selected>Selecciona una categoria...</option>
-                        <option value="1">Desarrollo web</option>
-                        <option value="2">Desarrollo movil</option>
-                        <option value="3">Bases de datos</option>
-                        <option value="4">Ciencia de datos</option>
-                        <option value="5">Diseño</option>
-                        <option value="6">Redes y seguridad</option>
-                        <option value="7">Negocios y marketing</option>
-                        <option value="8">Idiomas</option>
-                    </select>
+                <div class="form-fila">
+                    <div class="form-group">
+                        <label for="categoria">Categoria:</label>
+                        <select id="categoria" name="category_id" class="form-control" required>
+                            <option value="" disabled selected>Selecciona una categoria...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nivel">Nivel del curso:</label>
+                        <select id="nivel" name="level" class="form-control" required>
+                            <option value="" disabled selected>Selecciona un nivel...</option>
+                            <option value="beginner">Principiante</option>
+                            <option value="intermediate">Intermedio</option>
+                            <option value="advanced">Avanzado</option>
+                        </select>
+                    </div>
                 </div>
-                <!-- NIVEL DEL CURSO -->
-                <div class="form-group">
-                    <label for="nivel">Nivel del curso:</label>
-                    <select id="nivel" name="level" class="form-control" required>
-                        <option value="" disabled selected>Selecciona un nivel...</option>
-                        <option value="beginner">Principiante</option>
-                        <option value="intermediate">Intermedio</option>
-                        <option value="advanced">Avanzado</option>
-                    </select>
-                </div>
-                <!-- INGRESAR DESCRIPCION -->
+
                 <div class="form-group">
                     <label for="descripcion">Descripcion del curso:</label>
-                    <textarea id="descripcion" name="description" class="form-control" rows="4" minlength="100"
+                    <textarea id="descripcion" name="description" class="form-control" rows="9" minlength="100"
                         maxlength="5000" placeholder="Describe tu curso (minimo 100 caracteres)" required></textarea>
+                    <small class="ayuda">Minimo 100 caracteres. Es lo que lee un estudiante para decidir si se inscribe.</small>
                 </div>
-                 <!-- SECCION DE MODULOS -->
-                <div class="form-group">
-                <label>Módulos del Curso:</label>
-                <div id="contenedor-modulos"></div>
-                <button type="button" id="btnAgregarModulo" class="form-control" style="margin-top: 10px; cursor: pointer;">
-                    + Agregar Módulo
-                </button>
-                </div>
-                <div class="form-group">
+
+                <div class="panel-pie">
                     <button type="submit" class="btn-guardar">+ Guardar Curso</button>
                 </div>
-            </form>
-        </div>
+            </section>
+
+            <!-- COLUMNA DERECHA: ESTRUCTURA -->
+            <section class="panel">
+                <h3 class="panel-titulo">Módulos y contenidos</h3>
+                <p class="ayuda">
+                    Cada módulo puede tener varios contenidos. Todo se guarda al enviar,
+                    y puedes volver después para seguir editándolo.
+                </p>
+
+                <div id="contenedor-modulos"></div>
+
+                <button type="button" id="btnAgregarModulo" class="btn-agregar-modulo">
+                    + Agregar Módulo
+                </button>
+            </section>
+        </form>
     </main>
-    <script defer src="script.js"></script>
+
+    <script defer src="script.js?v=2"></script>
 </body>
 </html>
